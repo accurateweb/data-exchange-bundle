@@ -1,0 +1,8 @@
+{
+  "name": "accurateweb/synchronization-bundle",
+  "autoload": {
+    "psr-4": {
+      "Accurateweb\\SynchronizationBundle\\": ""
+    }
+  }
+}

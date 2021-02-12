@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="aw.synchronization.data_source_comparator" class="Accurateweb\SynchronizationBundle\Model\Datasource\ModifyTimeAwareDataSource\DataSourceTimeComparator">
+            <argument>%kernel.logs_dir%/synchronization</argument>
+        </service>
+        <service id="aw.synchronization.factory" class="Accurateweb\SynchronizationBundle\Model\SynchronizationServiceFactory">
+            <argument type="service" id="event_dispatcher" />
+            <argument type="service" id="logger" />
+            <argument type="service" id="aw.synchronization.data_source_comparator" />
+        </service>
+    </services>
+</container>
